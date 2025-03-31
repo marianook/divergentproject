@@ -1,0 +1,30 @@
+/* Añadir a globals.css o crear un nuevo archivo e importarlo */
+
+/* Optimizaciones para mejorar el rendimiento */
+body.is-scrolling .animate-on-scroll {
+  animation: none !important;
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* Reducir la complejidad de los efectos de blur */
+.reduced-blur {
+  filter: blur(8px);
+}
+
+/* Optimizar las transiciones */
+.optimized-transition {
+  transition-property: opacity, transform;
+  transition-duration: 0.3s;
+}
+
+/* Optimizar las animaciones */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
