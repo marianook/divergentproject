@@ -56,4 +56,3 @@ export function LazyImage({ src, alt, width, height, className }: LazyImageProps
     </div>
   )
 }
-

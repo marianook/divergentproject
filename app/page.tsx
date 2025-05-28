@@ -1,16 +1,19 @@
+// Ajustar el footer en la página principal para que sea responsivo
+
 "use client"
 
-import { useRef, useState } from "react"
+import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import {
   ArrowRight,
-  ArrowDownToLine,
   Brain,
   Briefcase,
   Calendar,
   Check,
+  Code,
   Cpu,
+  Database,
   Globe,
   HelpCircle,
   Layers,
@@ -23,20 +26,16 @@ import { motion } from "framer-motion"
 
 import { Button } from "@/components/ui/button"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import { ImageMosaic } from "@/components/image-mosaic"
 
 export default function Home() {
   const [isVideoPlaying, setIsVideoPlaying] = useState(false)
-  const videoRef = useRef<HTMLVideoElement>(null)
+  const videoUrl = isVideoPlaying
+    ? "https://www.youtube.com/embed/hsNt1ZjF7Fg?autoplay=1"
+    : "https://www.youtube.com/embed/hsNt1ZjF7Fg"
 
   const handlePlayVideo = () => {
-    if (videoRef.current) {
-      if (isVideoPlaying) {
-        videoRef.current.pause()
-      } else {
-        videoRef.current.play()
-      }
-      setIsVideoPlaying(!isVideoPlaying)
-    }
+    setIsVideoPlaying(!isVideoPlaying)
   }
 
   return (
@@ -52,7 +51,8 @@ export default function Home() {
 
       {/* Announcement banner */}
       <div className="relative z-20 bg-gradient-to-r from-green-900 to-green-800 text-white py-3 px-4 text-center text-sm md:text-base">
-        🚀 Si estás leyendo esto a inicios de junio, tu empresa podría estar generando cientos o miles de dólares EXTRA para el 15 de julio 🚀
+        🚀 Si estás leyendo esto a inicios de junio, tu empresa podría estar generando cientos o miles de
+        dólares EXTRA para el 15 de julio 🚀
       </div>
 
       <header className="sticky top-0 z-40 border-b border-white/5 bg-black/50 backdrop-blur-md">
@@ -184,8 +184,8 @@ export default function Home() {
                 transition={{ delay: 0.6, duration: 0.8 }}
                 className="text-lg md:text-xl text-white/70 mb-10 max-w-2xl mx-auto"
               >
-                Divergent Project es tu socio estratégico para implementar soluciones de Automatización con IA que
-                revolucionarán tu negocio y te posicionarán a la vanguardia de la innovación.
+                Divergent Project es tu socio estratégico para implementar soluciones de IA y desarrollo de software que
+                revolucionarán tu negocio y te posicionarán a la vanguardia de la innovación tecnológica.
               </motion.p>
 
               <motion.div
@@ -205,15 +205,14 @@ export default function Home() {
               <div className="absolute -inset-px rounded-2xl bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 opacity-50 blur-md"></div>
               <div className="relative rounded-2xl border border-white/10 bg-black/50 backdrop-blur-sm overflow-hidden">
                 <div className="aspect-[16/9] w-full bg-black/80 relative">
-                  <video
-                    ref={videoRef}
+                  <iframe
                     className="w-full h-full object-cover"
-                    poster="/placeholder.svg?height=1080&width=1920"
-                    controls={isVideoPlaying}
-                  >
-                    <source src="https://example.com/your-video.mp4" type="video/mp4" />
-                    Tu navegador no soporta el elemento de video.
-                  </video>
+                    src={videoUrl}
+                    title="YouTube video player"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  ></iframe>
 
                   {!isVideoPlaying && (
                     <div className="absolute inset-0 flex items-center justify-center bg-black/40">
@@ -311,12 +310,12 @@ export default function Home() {
               </div>
               <h2 className="text-3xl md:text-5xl font-bold mb-6">
                 <span className="bg-gradient-to-r from-white via-purple-100 to-white bg-clip-text text-transparent">
-                  Soluciones de IA a tu Medida
+                  Soluciones de IA y Software a tu Medida
                 </span>
               </h2>
               <p className="text-white/70 text-lg max-w-2xl mx-auto">
-                Ofrecemos un conjunto completo de servicios diseñados para transformar tu negocio y llevarlo al
-                siguiente nivel.
+                Ofrecemos un conjunto completo de servicios de IA y desarrollo de software diseñados para transformar tu
+                negocio y llevarlo al siguiente nivel.
               </p>
             </motion.div>
 
@@ -330,7 +329,7 @@ export default function Home() {
                   color: "from-blue-600 to-blue-400",
                 },
                 {
-                  icon: <MessageSquare className="h-6 w-6 text-purple-400" />,
+                  icon: <Code className="h-6 w-6 text-purple-400" />,
                   title: "Chatbots y Agentes",
                   description:
                     "Desarrollamos agentes de inteligencia artificial capaces de tomar decisiones autónomas en cualquier departamento o SOPs de pequeñas y medianas empresas.",
@@ -338,30 +337,30 @@ export default function Home() {
                 },
                 {
                   icon: <Layers className="h-6 w-6 text-pink-400" />,
-                  title: "Desarrollo de Estrategia",
+                  title: "Desarrollo de Software a Medida",
                   description:
-                    "Analizamos puntos de mejora a nivel estratégico para garantizar un crecimiento constante de cualquier pequeña o mediana empresa basándonos en sistemas de arquitectura empresarial.",
+                    "Creamos aplicaciones y sistemas personalizados que se adaptan perfectamente a las necesidades específicas de tu negocio, con tecnologías modernas y escalables.",
                   color: "from-pink-600 to-pink-400",
                 },
                 {
                   icon: <Globe className="h-6 w-6 text-blue-400" />,
-                  title: "Automatización de Atención al Cliente",
+                  title: "Automatización con IA",
                   description:
-                    "Creamos asistentes de inteligencia artificial que responden mensajes en segundos, gestionan consultas y optimizan la comunicación con tus clientes en WhatsApp, redes sociales y más.",
+                    "Creamos asistentes de inteligencia artificial que responden mensajes en segundos, gestionan consultas y optimizan la comunicación con tus clientes en múltiples canales.",
                   color: "from-blue-600 to-blue-400",
                 },
                 {
-                  icon: <ArrowDownToLine className="h-6 w-6 text-purple-400" />,
-                  title: "Agentes de IA para Procesos Empresariales",
+                  icon: <Database className="h-6 w-6 text-purple-400" />,
+                  title: "Desarrollo Web",
                   description:
-                    "Desarrollamos agentes autónomos que automatizan tareas repetitivas, optimizan la gestión de clientes y mejoran la eficiencia en múltiples áreas de tu negocio.",
+                    "Diseñamos y desarrollamos sitios web de alto rendimiento con las últimas tecnologías, enfocados en la experiencia del usuario y la escalabilidad.",
                   color: "from-purple-600 to-purple-400",
                 },
                 {
                   icon: <Briefcase className="h-6 w-6 text-pink-400" />,
                   title: "Consultoría Empresarial",
                   description:
-                    "Las evaluaciones de viabilidad de Divergent Project ofrecen un análisis riguroso de los proyectos de IA propuestos, garantizando su viabilidad práctica y un posible retorno de la inversión.",
+                    "Ofrecemos asesoramiento experto en tecnología, evaluando la viabilidad de proyectos y diseñando hojas de ruta para la transformación digital de tu empresa.",
                   color: "from-pink-600 to-pink-400",
                 },
               ].map((service, index) => (
@@ -658,37 +657,54 @@ export default function Home() {
                 <div className="inline-flex items-center gap-2 px-3 py-1 mb-6 text-sm font-medium rounded-full bg-white/5 border border-white/10 backdrop-blur-sm">
                   <Sparkles className="h-4 w-4 text-blue-400" />
                   <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-                    Nuestra Historia
+                    Mi historia
                   </span>
                 </div>
                 <h2 className="text-3xl md:text-5xl font-bold mb-6">
                   <span className="bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent">
-                    De la visión a la realidad
+                    Del código a la revolución
                   </span>
                 </h2>
                 <p className="text-white/70 text-lg mb-6">
-                  Mi viaje comenzó hace más de una década, cuando la inteligencia artificial era apenas un concepto
-                  emergente. Desde entonces, he dedicado mi carrera a desarrollar soluciones que transforman la manera
-                  en que las empresas operan.
+                  Desde que comencé en el mundo del desarrollo, siempre tuve una inquietud: no quería ser solo un
+                  programador más. Quería crear algo que realmente marcara la diferencia.
                 </p>
                 <p className="text-white/70 text-lg mb-6">
-                  Después de trabajar con docenas de empresas y ver cómo la IA revolucionaba sus operaciones, decidí
-                  fundar Divergent Project con una misión clara: hacer que la tecnología de IA sea accesible para todos
-                  los negocios, sin importar su tamaño.
+                  Durante años trabajé como desarrollador web, resolviendo problemas, optimizando sistemas y viendo cómo
+                  la tecnología podía cambiar la vida de las personas. Pero algo faltaba. No quería seguir atado a un
+                  escritorio cumpliendo órdenes. Quería construir. Innovar.
+                </p>
+                <p className="text-white/70 text-lg mb-6">
+                  Fue entonces cuando descubrí el potencial de la Inteligencia Artificial y el desarrollo de software
+                  moderno. No como conceptos futuristas, sino como herramientas reales que podían transformar negocios,
+                  automatizar procesos y crear soluciones tecnológicas a medida.
+                </p>
+                <p className="text-white/70 text-lg mb-6">
+                  Con esa visión en mente, fundé <span className="text-white font-semibold">Divergent Project</span>,
+                  con un objetivo claro: hacer que la IA y el desarrollo de software de calidad dejen de ser un
+                  privilegio de las grandes empresas y se conviertan en una ventaja competitiva para cualquier negocio.
                 </p>
                 <p className="text-white/70 text-lg mb-8">
-                  Hoy, Divergent Project ha ayudado a más de 200 empresas a implementar soluciones de IA que han
-                  multiplicado su eficiencia y rentabilidad, posicionándolas a la vanguardia de sus industrias.
+                  Hoy, <span className="text-white font-semibold">Divergent Project</span> no solo desarrolla soluciones
+                  de IA y software, sino que redefine la manera en que las empresas operan. No vendemos tecnología.
+                  Construimos sistemas que piensan, aprenden y evolucionan para que los negocios crezcan sin límites.
                 </p>
-                <Link href="/contacto-divergent">
-                  <Button className="relative overflow-hidden group">
-                    <span className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 transition-all duration-300 group-hover:opacity-90"></span>
-                    <span className="relative flex items-center">
-                      Agendar una Llamada
-                      <Calendar className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-                    </span>
-                  </Button>
-                </Link>
+                <p className="text-white/70 text-lg mb-8 text-center text-xl font-semibold italic">
+                  Si llegaste hasta acá, es porque también estás buscando algo más que simples herramientas. <br />
+                  <span className="text-white">Bienvenido al futuro.</span> 🚀
+                </p>
+
+                <div className="flex justify-center w-full">
+                  <Link href="/contacto-divergent">
+                    <Button className="relative overflow-hidden group h-14 px-8 text-base">
+                      <span className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 transition-all duration-300 group-hover:opacity-90"></span>
+                      <span className="relative flex items-center">
+                        Agendar una Llamada
+                        <Calendar className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
+                      </span>
+                    </Button>
+                  </Link>
+                </div>
               </motion.div>
 
               <motion.div
@@ -699,14 +715,8 @@ export default function Home() {
                 className="relative"
               >
                 <div className="absolute -inset-px rounded-2xl bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 opacity-50 blur-md"></div>
-                <div className="relative rounded-2xl border border-white/10 bg-black/50 backdrop-blur-sm overflow-hidden">
-                  <div className="aspect-[4/5] overflow-hidden">
-                    <img
-                      src="/placeholder.svg?height=800&width=640"
-                      alt="Fundador de Divergent Project"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
+                <div className="relative rounded-2xl border border-white/10 bg-black/50 backdrop-blur-sm overflow-hidden p-4">
+                  <ImageMosaic />
                 </div>
               </motion.div>
             </div>
@@ -899,8 +909,8 @@ export default function Home() {
 
       <footer className="relative z-10 border-t border-white/10 bg-black py-12">
         <div className="container px-4 md:px-6">
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-            <div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+            <div className="col-span-1 sm:col-span-2 md:col-span-1">
               <div className="flex items-center gap-2 mb-6">
                 <div className="relative w-10 h-10">
                   <Image
@@ -912,18 +922,10 @@ export default function Home() {
                 </div>
                 <span className="text-xl font-bold tracking-tight">Divergent Project</span>
               </div>
-              <p className="text-white/60 mb-6">
+              <p className="text-white/60 mb-6 max-w-md">
                 Automatización inteligente para empresas que quieren escalar sin límites.
               </p>
               <div className="flex gap-4">
-                <a
-                  href="#"
-                  className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white hover:bg-white/10 hover:text-white transition-colors duration-300"
-                >
-                  <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" />
-                  </svg>
-                </a>
                 <a
                   href="#"
                   className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white hover:bg-white/10 hover:text-white transition-colors duration-300"
@@ -933,16 +935,22 @@ export default function Home() {
                   </svg>
                 </a>
                 <a
-                  href="#"
+                  href="https://www.youtube.com/@marianohayward"
+                  target="_blank"
                   className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white hover:bg-white/10 hover:text-white transition-colors duration-300"
+                  rel="noreferrer"
                 >
                   <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+                    <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z" />
                   </svg>
                 </a>
               </div>
             </div>
-            <div>
+
+            {/* Espacio en medio */}
+            <div className="hidden md:block"></div>
+
+            <div className="mt-8 sm:mt-0">
               <h3 className="text-lg font-bold mb-6">Servicios</h3>
               <ul className="space-y-4">
                 <li>
@@ -957,44 +965,13 @@ export default function Home() {
                 </li>
                 <li>
                   <a href="#" className="text-white/60 hover:text-white transition-colors duration-300">
-                    Desarrollo de Estrategia
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-white/60 hover:text-white transition-colors duration-300">
-                    Publicidad Online
+                    Desarrollo de Software
                   </a>
                 </li>
               </ul>
             </div>
-            {/*
-            <div>
-              <h3 className="text-lg font-bold mb-6">Empresa</h3>
-              <ul className="space-y-4">
-                <li>
-                  <a href="#" className="text-white/60 hover:text-white transition-colors duration-300">
-                    Sobre Nosotros
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-white/60 hover:text-white transition-colors duration-300">
-                    Casos de Éxito
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-white/60 hover:text-white transition-colors duration-300">
-                    Blog
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-white/60 hover:text-white transition-colors duration-300">
-                    Carreras
-                  </a>
-                </li>
-              </ul>
-            </div>
-            */}
-            <div>
+
+            <div className="mt-8 sm:mt-0">
               <h3 className="text-lg font-bold mb-6">Contacto</h3>
               <ul className="space-y-4">
                 <li className="flex items-start gap-3">
@@ -1018,7 +995,25 @@ export default function Home() {
                       d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                     ></path>
                   </svg>
-                  <span className="text-white/60">Calle Principal 123, Ciudad</span>
+                  <span className="text-white/60">Tucumán, San Miguel de Tucumán, Argentina</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <svg
+                    className="h-5 w-5 text-green-500 mt-0.5"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+                  </svg>
+                  <a
+                    href="https://wa.me/543815214536"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white/60 hover:text-white transition-colors duration-300"
+                  >
+                    +54 3815214536
+                  </a>
                 </li>
                 <li className="flex items-start gap-3">
                   <svg
@@ -1035,29 +1030,12 @@ export default function Home() {
                       d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                     ></path>
                   </svg>
-                  <span className="text-white/60">info@divergentproject.com</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <svg
-                    className="h-5 w-5 text-white/60 mt-0.5"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                    ></path>
-                  </svg>
-                  <span className="text-white/60">+1 (555) 123-4567</span>
+                  <span className="text-white/60">contacto@divergentproject.com</span>
                 </li>
               </ul>
             </div>
           </div>
-          <div className="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
+          <div className="mt-8 md:mt-12 pt-6 md:pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-white/60 text-sm">
               &copy; {new Date().getFullYear()} Divergent Project. Todos los derechos reservados.
             </p>
@@ -1075,19 +1053,18 @@ export default function Home() {
 
       {/* Animated particles */}
       <style jsx global>{`
-        @keyframes float {
-          0% {
-            transform: translateY(0) translateX(0);
-          }
-          50% {
-            transform: translateY(-20px) translateX(10px);
-          }
-          100% {
-            transform: translateY(0) translateX(0);
-          }
-        }
-      `}</style>
+@keyframes float {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  50% {
+    transform: translateY(-20px) translateX(10px);
+  }
+  100% {
+    transform: translateY(0) translateX(0);
+  }
+}
+`}</style>
     </div>
   )
 }
-

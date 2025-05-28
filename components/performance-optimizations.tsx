@@ -35,4 +35,3 @@ export function PerformanceOptimizations() {
 
   return null
 }
-

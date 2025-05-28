@@ -6,27 +6,31 @@ export function SiteFooter() {
   return (
     <footer className="border-t border-white/10 bg-black text-white">
       <div className="container px-4 md:px-6 py-12 md:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="space-y-4">
-            <div className="flex items-center gap-2">
-              <div className="relative w-10 h-10">
-                <Image
-                  src="/images/logoAgenciaIASinFONDO.png"
-                  alt="Divergent Project Logo"
-                  fill
-                  className="object-contain"
-                />
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+          <div className="col-span-1 sm:col-span-2">
+            <div className="space-y-4">
+              <div className="flex items-center gap-2">
+                <div className="relative w-10 h-10">
+                  <Image
+                    src="/images/logoAgenciaIASinFONDO.png"
+                    alt="Divergent Project Logo"
+                    fill
+                    className="object-contain"
+                  />
+                </div>
+                <span className="text-xl font-bold tracking-tight">Divergent Project</span>
               </div>
-              <span className="text-xl font-bold tracking-tight">Divergent Project</span>
+              <p className="text-sm text-muted-foreground">
+                Transformando negocios con Inteligencia Artificial y desarrollo de software para mejorar la eficiencia y
+                aumentar los ingresos.
+              </p>
             </div>
-            <p className="text-sm text-muted-foreground">
-              Transformando negocios con Inteligencia Artificial para mejorar la eficiencia y aumentar los ingresos.
-            </p>
           </div>
 
-          {/* El espacio del medio queda libre */}
+          {/* Espacio en medio */}
+          <div className="hidden md:block"></div>
 
-          <div>
+          <div className="mt-8 sm:mt-0">
             <h3 className="text-lg font-medium mb-4">Servicios</h3>
             <ul className="space-y-2">
               <li>
@@ -36,12 +40,12 @@ export function SiteFooter() {
               </li>
               <li>
                 <Link href="#benefits" className="text-sm text-muted-foreground hover:text-white transition-colors">
-                  Consultoría Estratégica
+                  Desarrollo de Software
                 </Link>
               </li>
               <li>
                 <Link href="#story" className="text-sm text-muted-foreground hover:text-white transition-colors">
-                  Implementación Personalizada
+                  Consultoría Tecnológica
                 </Link>
               </li>
               <li>
@@ -52,7 +56,7 @@ export function SiteFooter() {
             </ul>
           </div>
 
-          <div>
+          <div className="mt-8 sm:mt-0">
             <h3 className="text-lg font-medium mb-4">Contacto</h3>
             <ul className="space-y-3">
               <li className="flex items-start gap-3">
@@ -71,7 +75,7 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="mt-8 md:mt-12 pt-6 md:pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-muted-foreground">© 2024 Divergent Project. Todos los derechos reservados.</p>
           <div className="flex gap-4">
             <Link href="#" className="text-muted-foreground hover:text-white transition-colors">
@@ -89,4 +93,3 @@ export function SiteFooter() {
     </footer>
   )
 }
-

@@ -80,8 +80,8 @@ export default function ContactoPage() {
               </p>
             </div>
 
-            <div className="bg-black/50 backdrop-blur-md border border-white/10 rounded-2xl overflow-hidden">
-              <div className="grid md:grid-cols-2">
+            <div className="bg-black/50 backdrop-blur-md border border-white/10 rounded-2xl overflow-hidden max-w-7xl mx-auto">
+              <div className="grid md:grid-cols-[3fr_3fr] w-full">
                 {/* Columna izquierda - Información del servicio */}
                 <div className="p-8 md:p-12 border-b md:border-b-0 md:border-r border-white/10">
                   <div className="flex items-center gap-4 mb-6">
@@ -94,7 +94,8 @@ export default function ContactoPage() {
                     <div>
                       <h2 className="text-xl font-bold">Divergent Project AI</h2>
                       <h3 className="text-lg font-semibold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-                        Llamada de Inteligencia Artificial
+                        Llamada de Inteligencia Artificial /<br />
+                        Desarrollo de Software
                       </h3>
                     </div>
                   </div>
@@ -114,8 +115,10 @@ export default function ContactoPage() {
                     </p>
                     <p className="text-white/70 mb-4">
                       Luego, construiremos un{" "}
-                      <strong className="text-purple-400">plan personalizado de Automatización con IA</strong> sobre
-                      cómo solucionarlos.
+                      <strong className="text-purple-400">
+                        plan personalizado de Automatización con IA / Desarrollo de software
+                      </strong>{" "}
+                      sobre cómo solucionarlos.
                     </p>
                     <div className="flex items-center gap-2 mt-6 text-yellow-400">
                       <span className="text-2xl">👋</span>
@@ -137,7 +140,6 @@ export default function ContactoPage() {
                     title="Selecciona una fecha para tu llamada"
                     className="rounded-md"
                   ></iframe>
-
                 </div>
               </div>
             </div>
@@ -149,4 +151,3 @@ export default function ContactoPage() {
     </div>
   )
 }
-

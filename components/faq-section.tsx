@@ -52,14 +52,14 @@ export function FaqSection() {
 
 const faqs = [
   {
-    question: "¿Cuánto tiempos se tarda en implementar la IA?",
+    question: "¿Cuánto tiempo se tarda en implementar soluciones de IA y desarrollo?",
     answer:
-      "El tiempo promedio en crear las integraciones de inteligencia artificial en una estructura empresarial dependerá de muchos factores tales como los SOPs de cada empresa y el departamento afectado. Tenemos un éxito de integración de sistemas con nuestros clientes de 1 mes a 12 meses.",
+      "El tiempo promedio en crear integraciones de IA y desarrollar software a medida dependerá de muchos factores como la complejidad del proyecto y los requisitos específicos. Tenemos un éxito de integración de sistemas con nuestros clientes de 1 mes a 12 meses.",
   },
   {
     question: "¿Por qué contratar a Divergent Project?",
     answer:
-      "Por encima de todo, somos personas, empatizamos con los proyectos de nuestros clientes y nos mimetizamos con sus emociones, te acompañaremos en cada paso.",
+      "Por encima de todo, somos personas, empatizamos con los proyectos de nuestros clientes y nos mimetizamos con sus emociones, te acompañaremos en cada paso. Además, combinamos experiencia en IA y desarrollo de software para ofrecer soluciones integrales.",
   },
   {
     question: "¿Imponen permanencia?",
@@ -69,7 +69,7 @@ const faqs = [
   {
     question: "¿Dónde trabaján?",
     answer:
-      "Ofrecemos nuestros servicios de IA en todo el mundo. Desplazándonos en cada caso para reunirnos con cada uno de nuestros clientes.",
+      "Ofrecemos nuestros servicios de IA y desarrollo de software en todo el mundo. Desplazándonos en cada caso para reunirnos con cada uno de nuestros clientes.",
   },
   {
     question: "¿Cómo puedo empezar a trabajar con Divergent Project?",
@@ -79,7 +79,6 @@ const faqs = [
   {
     question: "¿Ofrecen soporte continuo después de la implementación?",
     answer:
-      "Sí. Nuestro compromiso no termina con la implementación. Ofrecemos soporte continuo, actualizaciones regulares y optimizaciones basadas en el rendimiento y feedback. Además, proporcionamos capacitación continua para asegurar que tu equipo pueda aprovechar al máximo las soluciones implementadas.",
+      "Sí, todos nuestros proyectos incluyen un período de soporte post-implementación. Además, ofrecemos planes de mantenimiento y optimización continua para asegurar que las soluciones sigan evolucionando con tu negocio y mantengan su efectividad a largo plazo.",
   },
 ]
-

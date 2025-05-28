@@ -7,8 +7,8 @@ export function ContactFooter() {
   return (
     <footer className="border-t border-white/10 bg-black text-white">
       <div className="container px-4 md:px-6 py-12 md:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="space-y-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+          <div className="col-span-1 sm:col-span-2 md:col-span-1">
             <div className="flex items-center gap-2">
               <div className="relative w-10 h-10">
                 <Image
@@ -20,14 +20,16 @@ export function ContactFooter() {
               </div>
               <span className="text-xl font-bold tracking-tight">Divergent Project</span>
             </div>
-            <p className="text-sm text-muted-foreground">
-              Transformando negocios con Inteligencia Artificial para mejorar la eficiencia y aumentar los ingresos.
+            <p className="text-sm text-muted-foreground mt-4 max-w-md">
+              Transformando negocios con Inteligencia Artificial y desarrollo de software para mejorar la eficiencia y
+              aumentar los ingresos.
             </p>
           </div>
 
-          {/* El espacio del medio queda libre */}
+          {/* Espacio en medio */}
+          <div className="hidden md:block"></div>
 
-          <div>
+          <div className="mt-8 sm:mt-0">
             <h3 className="text-lg font-medium mb-4">Enlaces Rápidos</h3>
             <ul className="space-y-2">
               <li>
@@ -53,7 +55,7 @@ export function ContactFooter() {
             </ul>
           </div>
 
-          <div>
+          <div className="mt-8 sm:mt-0">
             <h3 className="text-lg font-medium mb-4">Contacto</h3>
             <ul className="space-y-3">
               <li className="flex items-start gap-3">
@@ -73,13 +75,13 @@ export function ContactFooter() {
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="h-5 w-5 text-primary" />
-                <span className="text-sm text-muted-foreground">info@haywardproject.com</span>
+                <span className="text-sm text-muted-foreground">contacto@divergentproject.com</span>
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="mt-8 md:mt-12 pt-6 md:pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-muted-foreground">© 2024 Divergent Project. Todos los derechos reservados.</p>
           <div className="flex gap-4">
             <Link href="#" className="text-muted-foreground hover:text-white transition-colors">
@@ -88,13 +90,9 @@ export function ContactFooter() {
             <Link href="#" className="text-muted-foreground hover:text-white transition-colors">
               Privacidad
             </Link>
-            <Link href="#" className="text-muted-foreground hover:text-white transition-colors">
-              Cookies
-            </Link>
           </div>
         </div>
       </div>
     </footer>
   )
 }
-

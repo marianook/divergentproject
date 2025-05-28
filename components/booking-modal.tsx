@@ -210,4 +210,3 @@ export function BookingModal({ open, onOpenChange }: BookingModalProps) {
     </Dialog>
   )
 }
-

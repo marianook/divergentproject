@@ -10,4 +10,3 @@ interface Calendly {
 interface Window {
   Calendly?: Calendly
 }
-
