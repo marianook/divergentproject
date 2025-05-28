@@ -52,7 +52,7 @@ export default function Home() {
 
       {/* Announcement banner */}
       <div className="relative z-20 bg-gradient-to-r from-green-900 to-green-800 text-white py-3 px-4 text-center text-sm md:text-base">
-        🚀 Si estás leyendo esto a inicio de abril, tu estudio jurídico podría estar generando cientos o miles de dólares EXTRA para el 15 de mayo 🚀
+        🚀 Si estás leyendo esto a inicios de junio, tu empresa podría estar generando cientos o miles de dólares EXTRA para el 15 de julio 🚀
       </div>
 
       <header className="sticky top-0 z-40 border-b border-white/5 bg-black/50 backdrop-blur-md">
